@@ -23,7 +23,6 @@ def index():
 
     expenses = list(collection.find().sort("date", -1))
 
-    # ✅ TOTAL EXPENSE CALCULATION
     total_expense = sum(expense["amount"] for expense in expenses)
 
     return render_template(
